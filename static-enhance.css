@@ -1,0 +1,33 @@
+:root{
+  --brand-navy:#0b2545;
+  --brand-teal:#0fb69a;
+  --brand-olive:#9ccf7a;
+  --muted:#6b7280;
+}
+html,body{height:100%;}
+body{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;line-height:1.45;color:#0f172a;background:#f8fafc}
+a{color:var(--brand-teal)}
+
+/* Simple professional hero adjustments for static output */
+.hero-enhanced{background:linear-gradient(180deg,rgba(11,37,69,0.9),rgba(15,182,154,0.6));color:white;padding:3rem 1rem;border-radius:8px}
+.hero-enhanced h1{font-weight:700;font-size:2.25rem;margin:0 0 .5rem}
+.hero-enhanced p{color:rgba(255,255,255,0.9);margin:0 0 1rem}
+
+/* Loading skeleton support */
+.skeleton{background:linear-gradient(90deg,#efefef 25%,#f7f7f7 37%,#efefef 63%);background-size:400% 100%;animation:shimmer 1.4s ease infinite;border-radius:6px}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* subtle entry animations */
+.fade-up{opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.is-visible{opacity:1;transform:translateY(0)}
+
+/* Balanced callouts for Veterans and Families */
+.balanced-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.balanced-card{background:white;padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(12,18,30,0.06)}
+
+/* Make images look polished */
+img{max-width:100%;height:auto;display:block}
+.img-loading{filter:blur(6px);opacity:.9;transition:filter .6s ease,opacity .6s ease}
+
+/* small responsive rules */
+@media (max-width:768px){.balanced-grid{grid-template-columns:1fr}}

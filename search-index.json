@@ -1,0 +1,123 @@
+[
+  {
+    "id": "1",
+    "title": "Tyler Ranch Home",
+    "type": "project",
+    "url": "projects/tyler-ranch-home.html",
+    "description": "Beautiful 3BR/2BA ranch home on 1.5 acres, Section 8 ready with modern renovations",
+    "tags": ["Section 8", "Veteran Priority", "Family Friendly"],
+    "location": "Tyler, TX",
+    "price": "$1,800/month",
+    "bedrooms": "3",
+    "bathrooms": "2",
+    "sqft": "1,850"
+  },
+  {
+    "id": "2",
+    "title": "Longview Victorian Home",
+    "type": "project",
+    "url": "projects/longview-victorian.html",
+    "description": "Historic Victorian home with modern updates in downtown Longview",
+    "tags": ["Historic", "Custom Finishes", "Market Rate"],
+    "location": "Longview, TX",
+    "price": "$1,950/month",
+    "bedrooms": "4",
+    "bathrooms": "3",
+    "sqft": "2,400"
+  },
+  {
+    "id": "3",
+    "title": "Jefferson Riverfront Cabin",
+    "type": "project",
+    "url": "projects/jefferson-riverfront.html",
+    "description": "Charming cabin-style home on Big Cypress Bayou with premium wood finishes",
+    "tags": ["Waterfront", "Custom Wood", "Section 8"],
+    "location": "Jefferson, TX",
+    "price": "$1,650/month",
+    "bedrooms": "3",
+    "bathrooms": "2",
+    "sqft": "1,600"
+  },
+  {
+    "id": "4",
+    "title": "East Texas Veteran Housing",
+    "type": "resource",
+    "url": "resources.html#veteran-housing",
+    "description": "Specialized housing assistance programs for U.S. military veterans in East Texas",
+    "location": "East Texas",
+    "tags": ["Veterans", "Housing Assistance", "Section 8"]
+  },
+  {
+    "id": "5",
+    "title": "Section 8 Voucher Guide - East Texas",
+    "type": "resource",
+    "url": "resources.html#section8-guide",
+    "description": "Complete guide to Section 8 housing vouchers and rental assistance in Texas",
+    "location": "Texas",
+    "tags": ["Section 8", "Rental Assistance", "Government Programs"]
+  },
+  {
+    "id": "6",
+    "title": "Fair Market Rent Calculator",
+    "type": "resource",
+    "url": "resources.html#calculator",
+    "description": "Calculate your potential housing assistance and fair market rents",
+    "location": "Texas",
+    "tags": ["Calculator", "Fair Market Rent", "Housing Assistance"]
+  },
+  {
+    "id": "7",
+    "title": "East Texas Renovation Experts",
+    "type": "page",
+    "url": "about.html",
+    "description": "Learn about Properties 4 Creation's mission to provide quality affordable housing",
+    "location": "East Texas",
+    "tags": ["Company", "Mission", "Quality Assurance"]
+  },
+  {
+    "id": "8",
+    "title": "Contact - East Texas Properties",
+    "type": "page",
+    "url": "contact.html",
+    "description": "Get in touch with our East Texas housing specialists",
+    "location": "Tyler, TX",
+    "phone": "(903) 647-0000",
+    "email": "contact@properties4creation.com"
+  },
+  {
+    "id": "9",
+    "title": "Available East Texas Properties",
+    "type": "page",
+    "url": "projects.html",
+    "description": "Browse our available family homes and veteran housing in East Texas",
+    "location": "East Texas",
+    "tags": ["Properties", "Homes", "Available Now"]
+  },
+  {
+    "id": "10",
+    "title": "Veteran Housing Resources",
+    "type": "page",
+    "url": "resources.html",
+    "description": "Comprehensive resources for veteran housing assistance and benefits",
+    "location": "Texas",
+    "tags": ["Veterans", "Resources", "Benefits"]
+  },
+  {
+    "id": "11",
+    "title": "Tyler School District",
+    "type": "resource",
+    "url": "projects/tyler-ranch-home.html#schools",
+    "description": "Excellent schools near Tyler Ranch Home including Carmel Academy",
+    "location": "Tyler, TX",
+    "tags": ["Education", "Schools", "Family Friendly"]
+  },
+  {
+    "id": "12",
+    "title": "Fair Cash Offers",
+    "type": "resource",
+    "url": "get-started.html",
+    "description": "Get fair market value offers for your property in East Texas",
+    "location": "East Texas",
+    "tags": ["Cash Offers", "Fair Pricing", "Sell Property"]
+  }
+]

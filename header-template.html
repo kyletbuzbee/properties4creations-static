@@ -1,0 +1,77 @@
+<!-- Unified Header Template - Use this in all P4C pages -->
+<header id="main-header" class="sticky top-0 z-50 transition-all duration-300 bg-brand-navy text-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo and Brand -->
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                        <span class="text-white font-bold text-lg">P4</span>
+                    </div>
+                    <span class="text-xl font-bold group-hover:text-slate-200 transition-colors duration-200 hidden sm:inline">
+                        Properties 4 Creation
+                    </span>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="index.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">Home</a>
+                <a href="projects.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">Our Work</a>
+                <a href="insights.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">Insights</a>
+                <a href="resources.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">For Veterans</a>
+                <a href="about.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">About Us</a>
+
+                <!-- Search Button -->
+                <button id="header-search-toggle" class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-slate-200 hover:text-white hover:bg-white/10 rounded-md transition-all duration-200" title="Search (⌘K)">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+
+                <!-- Portal Button -->
+                <button id="header-portal-toggle" class="px-3 py-2 text-sm font-medium text-slate-200 hover:text-white hover:bg-white/10 rounded-md transition-all duration-200">
+                    Portals
+                </button>
+
+                <!-- CTA Button -->
+                <a href="get-started.html" class="bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:shadow-2xl hover:scale-105 transition-all duration-300 hover:shadow-red-500/25">
+                    Get Fair Offer
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-toggle" class="lg:hidden p-2 rounded-md text-slate-200 hover:text-white hover:bg-white/10 transition-colors duration-200" aria-expanded="false" aria-label="Toggle navigation menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="lg:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0 invisible -translate-y-2">
+            <div class="px-4 py-6 bg-slate-900/50 border-t border-white/10 backdrop-blur-sm space-y-4">
+                <a href="index.html" class="block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">Home</a>
+                <a href="projects.html" class="block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">Our Work</a>
+                <a href="insights.html" class="block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">Insights</a>
+                <a href="resources.html" class="block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">For Veterans</a>
+                <a href="about.html" class="block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">About Us</a>
+                
+                <button id="mobile-search-toggle" class="w-full text-left px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">
+                    <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    Search
+                </button>
+
+                <button id="mobile-portal-toggle" class="w-full text-left px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">
+                    Portals
+                </button>
+
+                <a href="get-started.html" class="block w-full text-center bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-4 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg mt-4">
+                    Get Fair Offer
+                </a>
+            </div>
+        </div>
+    </div>
+</header>

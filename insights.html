@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Market Insights & Trends - Properties 4 Creation</title>
+    <meta name="description" content="Latest insights into affordable housing trends, market analysis, and real estate data. Veteran-focused housing market intelligence and fair pricing analysis.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#1e293b',
+                            beige: '#ffffff',
+                            sage: '#059669',
+                            tan: '#475569',
+                            red: '#dc2626',
+                            olive: '#4d7c0f'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Merriweather', 'serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --corporate-navy: #1e293b;
+            --corporate-emerald: #059669;
+        }
+
+        body {
+            font-family: 'Merriweather', 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-brand-beige">
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 w-full z-50 bg-brand-navy text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold text-white hover:text-brand-sage transition-colors">
+                        Properties 4 Creation
+                    </a>
+                </div>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-brand-sage transition-colors">Home</a>
+                    <a href="projects.html" class="text-white hover:text-brand-sage transition-colors">Projects</a>
+                    <a href="resources.html" class="text-white hover:text-brand-sage transition-colors">Resources</a>
+                    <a href="insights.html" class="text-white hover:text-brand-sage transition-colors font-semibold">Insights</a>
+                    <a href="about.html" class="text-white hover:text-brand-sage transition-colors">About</a>
+                    <a href="contact.html" class="text-white hover:text-brand-sage transition-colors">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="search-toggle" class="hidden md:block px-4 py-2 text-white hover:bg-white/10 rounded-lg transition-colors text-sm">
+                        Search (⌘K)
+                    </button>
+                    <button id="portal-toggle" class="px-4 py-2 bg-brand-sage hover:bg-brand-sage/80 text-white rounded-lg transition-colors">
+                        Portals
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Global Search Modal -->
+    <div id="global-search-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden">
+        <div class="max-w-2xl mx-auto mt-20 bg-white rounded-lg shadow-2xl overflow-hidden">
+            <div class="p-4 border-b border-slate-200">
+                <div class="relative">
+                    <input id="search-input" type="text" placeholder="Search properties, resources, and pages..." class="w-full pl-4 pr-4 py-3 text-lg border-0 focus:ring-0 focus:outline-none" />
+                    <button id="search-close" class="absolute right-3 top-3 text-slate-400 hover:text-slate-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="search-results" class="max-h-96 overflow-y-auto"></div>
+        </div>
+    </div>
+
+    <!-- Portal Modal -->
+    <div id="portal-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden">
+        <div class="max-w-md mx-auto mt-20 bg-white rounded-lg shadow-2xl p-6 m-4">
+            <h3 class="text-2xl font-bold text-brand-navy mb-6">Choose Your Portal</h3>
+            <div class="space-y-4">
+                <button class="w-full flex items-center gap-3 p-4 bg-brand-sage/10 hover:bg-brand-sage/20 rounded-lg transition-colors">
+                    <div class="w-8 h-8 bg-brand-sage rounded-full flex items-center justify-center">
+                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                    </div>
+                    <div class="text-left">
+                        <div class="font-medium text-brand-navy">Partner Portal</div>
+                        <div class="text-sm text-slate-600">Property owners & investors</div>
+                    </div>
+                </button>
+
+                <button class="w-full flex items-center gap-3 p-4 bg-brand-navy/10 hover:bg-brand-navy/20 rounded-lg transition-colors">
+                    <div class="w-8 h-8 bg-brand-navy rounded-full flex items-center justify-center">
+                        <span class="text-xs text-white">🇺🇸</span>
+                    </div>
+                    <div class="text-left">
+                        <div class="font-medium text-brand-navy">Veteran Services</div>
+                        <div class="text-sm text-slate-600">Housing support & resources</div>
+                    </div>
+                </button>
+            </div>
+            <button id="portal-close" class="mt-6 w-full px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:border-slate-400 transition-colors">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-brand-navy to-brand-cocoa text-white py-20">
+            <div class="max-w-6xl mx-auto px-4 text-center animate-fade-in-up">
+                <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6">
+                    Housing Market
+                    <span class="block text-brand-sage">Insights & Analysis</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-200 mb-8 max-w-3xl mx-auto">
+                    Stay informed with the latest trends, market analysis, and data-driven insights to make smarter housing decisions for veterans and families.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="px-8 py-4 bg-brand-sage hover:bg-brand-sage/90 text-white rounded-lg font-semibold transition-all hover:shadow-xl">
+                        Latest Market Report →
+                    </button>
+                    <button class="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-brand-navy rounded-lg font-semibold transition-all">
+                        Veteran Housing Trends
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Metrics Banner -->
+        <section class="bg-brand-navy text-white py-8">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="text-3xl font-bold text-brand-sage mb-1">3.2%</div>
+                        <div class="text-sm text-slate-300">Average Rent Growth</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-3xl font-bold text-brand-sage mb-1">78%</div>
+                        <div class="text-sm text-slate-300">Housing Burden Rate</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-3xl font-bold text-brand-sage mb-1">142%</div>
+                        <div class="text-sm text-slate-300">Median Home Price Increase</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-3xl font-bold text-green-400 mb-1">↓ 15%</div>
+                        <div class="text-sm text-slate-300">Fair Market Properties</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Insight -->
+        <section class="py-16 bg-white">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-brand-navy mb-4">Featured Market Insight</h2>
+                    <p class="text-lg text-slate-600">Understanding the forces shaping affordable housing markets</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-lg p-8 mb-8">
+                    <div class="flex items-start gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-brand-sage rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-brand-navy mb-3">Section 8 Success Stories: Market Impact Analysis</h3>
+                            <p class="text-slate-700 mb-4">
+                                Our latest analysis reveals that Section 8 voucher programs have successfully helped over 5 million households maintain
+                                affordable housing access while maintaining community stability and supporting fair market principles.
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                                <div class="bg-white p-4 rounded-lg border border-slate-200">
+                                    <div class="text-2xl font-bold text-brand-navy mb-1">85%</div>
+                                    <div class="text-sm text-slate-600">Housing Stability Rate</div>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg border border-slate-200">
+                                    <div class="text-2xl font-bold text-brand-navy mb-1">94%</div>
+                                    <div class="text-sm text-slate-600">Property Management Satisfaction</div>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg border border-slate-200">
+                                    <div class="text-2xl font-bold text-brand-navy mb-1">$1.2B</div>
+                                    <div class="text-sm text-slate-600">Annual Economic Contribution</div>
+                                </div>
+                            </div>
+                            <button class="px-6 py-3 bg-brand-navy text-white rounded-lg font-semibold hover:bg-brand-tan transition-colors">
+                                Read Full Report →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Market Categories -->
+        <section class="py-16 bg-slate-50">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-brand-navy mb-4">Market Intelligence</h2>
+                    <p class="text-lg text-slate-600">Comprehensive analysis across key housing market indicators</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Rent Trends -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                                <span class="text-white font-bold">$</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-navy">Rent Trends</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">
+                            Single-family rental prices increased 3.2% annually, while Section 8 assisted housing shows stability.
+                        </p>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">1BR Apartment:</span>
+                                <span class="font-semibold">$1,200</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">2BR Apartment:</span>
+                                <span class="font-semibold">$1,600</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">3BR House:</span>
+                                <span class="font-semibold">$2,200</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors">
+                            View Rent Report
+                        </button>
+                    </div>
+
+                    <!-- Home Values -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                                <span class="text-white font-bold">🏠</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-navy">Home Values</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">
+                            Home prices climbed 142% in the past decade, affecting affordability for first-time buyers and veterans.
+                        </p>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Median Price:</span>
+                                <span class="font-semibold">$450,000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Price/Sq Ft:</span>
+                                <span class="font-semibold">$180</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Fair Market:</span>
+                                <span class="font-semibold text-green-600">↓ $350,000</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-4 px-4 py-2 bg-green-500 text-white rounded-lg text-sm font-medium hover:bg-green-600 transition-colors">
+                            Value Analysis
+                        </button>
+                    </div>
+
+                    <!-- Market Affordability -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
+                                <span class="text-white font-bold">📊</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-navy">Affordability Index</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">
+                            78% of household income spent on housing, exceeding recommended 30% threshold significantly.
+                        </p>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Housing Burden Rate:</span>
+                                <span class="font-semibold text-red-600">78%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Recommended:</span>
+                                <span class="font-semibold text-green-600">30%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Section 8 Helps:</span>
+                                <span class="font-semibold text-blue-600">▼ 48%</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-4 px-4 py-2 bg-purple-500 text-white rounded-lg text-sm font-medium hover:bg-purple-600 transition-colors">
+                            Affordability Tools
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regional Insights -->
+        <section class="py-16 bg-white">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-brand-navy mb-4">Regional Housing Markets</h2>
+                    <p class="text-lg text-slate-600">Market conditions across key Texas housing markets</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Austin Market -->
+                    <div class="border border-slate-200 rounded-lg p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-brand-navy">Austin Metro</h3>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Stable Growth</span>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Med. Home Price:</span>
+                                <span class="font-semibold">$550,000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">YoY Growth:</span>
+                                <span class="font-semibold text-green-600">+4.2%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Fair Market Properties:</span>
+                                <span class="font-semibold text-blue-600">247 available</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Section 8 Success Rate:</span>
+                                <span class="font-semibold text-green-600">92%</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-4 px-4 py-2 bg-brand-navy text-white rounded-lg text-sm font-medium hover:bg-brand-tan transition-colors">
+                            Austin Market Report
+                        </button>
+                    </div>
+
+                    <!-- Houston Market -->
+                    <div class="border border-slate-200 rounded-lg p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-brand-navy">Houston Metro</h3>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">High Demand</span>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Med. Home Price:</span>
+                                <span class="font-semibold">$380,000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">YoY Growth:</span>
+                                <span class="font-semibold text-green-600">+6.8%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Fair Market Properties:</span>
+                                <span class="font-semibold text-blue-600">183 available</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Section 8 Success Rate:</span>
+                                <span class="font-semibold text-green-600">89%</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-4 px-4 py-2 bg-brand-navy text-white rounded-lg text-sm font-medium hover:bg-brand-tan transition-colors">
+                            Houston Market Report
+                        </button>
+                    </div>
+
+                    <!-- Dallas Market -->
+                    <div class="border border-slate-200 rounded-lg p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-brand-navy">Dallas Metro</h3>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Growing Markets</span>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Med. Home Price:</span>
+                                <span class="font-semibold">$425,000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">YoY Growth:</span>
+                                <span class="font-semibold text-green-600">+5.5%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Fair Market Properties:</span>
+                                <span class="font-semibold text-blue-600">134 available</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Section 8 Success Rate:</span>
+                                <span class="font-semibold text-green-600">85%</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-4 px-4 py-2 bg-brand-navy text-white rounded-lg text-sm font-medium hover:bg-brand-tan transition-colors">
+                            Dallas Market Report
+                        </button>
+                    </div>
+
+                    <!-- National Comparison -->
+                    <div class="border border-slate-200 rounded-lg p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-brand-navy">National Trends</h3>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-800 rounded-full text-sm font-medium">Comparative Analysis</span>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">U.S. Home Values:</span>
+                                <span class="font-semibold">$440,000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">National Rent Growth:</span>
+                                <span class="font-semibold text-green-600">+3.0%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Housing Affordability:</span>
+                                <span class="font-semibold text-red-600">↓ Critical</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Section 8 Scale:</span>
+                                <span class="font-semibold text-green-600">5.2M households</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-4 px-4 py-2 bg-brand-sage text-white rounded-lg text-sm font-medium hover:bg-brand-olive transition-colors">
+                            National Report
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Veteran Housing Insights -->
+        <section class="py-16 bg-brand-sand">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-brand-navy mb-4">Veteran Housing Impact</h2>
+                    <p class="text-lg text-slate-600">How housing programs benefit veteran communities and local economies</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-brand-navy mb-4">Economic Benefits of Affordable Veteran Housing</h3>
+                        <p class="text-slate-700 mb-6">
+                            Veteran housing programs create measurable economic impact by reducing homelessness,
+                            improving workforce participation, and supporting sustainable communities.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-white text-xs">✓</span>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-brand-navy">Workforce Participation</div>
+                                    <div class="text-slate-600 text-sm">Stable housing enables veterans to return to work and contribute economically</div>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-white text-xs">✓</span>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-brand-navy">Community Stability</div>
+                                    <div class="text-slate-600 text-sm">Reduces neighborhood turnover and supports local business development</div>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-white text-xs">✓</span>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-brand-navy">Property Value Protection</div>
+                                    <div class="text-slate-600 text-sm">Fair housing maintains neighborhood appeal and market attractiveness</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-8 shadow">
+                        <h4 class="text-xl font-bold text-brand-navy mb-6 text-center">Veteran Housing Success Metrics</h4>
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-600">Homeless Prevention Rate</span>
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold text-brand-sage">89%</div>
+                                    <div class="text-xs text-slate-500">Supporting 142K veterans</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-600">Economic Impact</span>
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold text-brand-sage">$8.2B</div>
+                                    <div class="text-xs text-slate-500">Annual contribution</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-600">Community Integration</span>
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold text-brand-sage">94%</div>
+                                    <div class="text-xs text-slate-500">Successful outcomes</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-600">Fair Market Properties</span>
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold text-brand-sage">2,100+</div>
+                                    <div class="text-xs text-slate-500">Available nationwide</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="py-16 bg-brand-navy text-white">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-4">Stay Informed</h2>
+                <p class="text-slate-200 mb-8 max-w-2xl mx-auto">
+                    Get weekly housing market insights, veteran program updates, and fair market analysis delivered to your inbox.
+                </p>
+                <div class="max-w-md mx-auto bg-white p-6 rounded-lg">
+                    <form class="space-y-4">
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent" required>
+                        <button type="submit" class="w-full px-6 py-3 bg-brand-sage text-white rounded-lg font-semibold hover:bg-brand-olive transition-colors">
+                            Subscribe to Insights
+                        </button>
+                    </form>
+                    <p class="text-xs text-slate-500 mt-3">
+                        Receive market updates, policy changes, and veteran housing opportunities. Unsubscribe anytime.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Properties 4 Creation</h3>
+                    <p class="text-slate-300 text-sm">
+                        Connecting veterans with quality homes through fair market practices.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><a href="properties.html" class="hover:text-brand-sage transition-colors">Property Sales</a></li>
+                        <li><a href="renovations.html" class="hover:text-brand-sage transition-colors">Renovations</a></li>
+                        <li><a href="management.html" class="hover:text-brand-sage transition-colors">Management</a></li>
+                        <li><a href="consulting.html" class="hover:text-brand-sage transition-colors">Consulting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><a href="resources.html" class="hover:text-brand-sage transition-colors">Section 8 Guide</a></li>
+                        <li><a href="insights.html" class="hover:text-brand-sage transition-colors">Market Insights</a></li>
+                        <li><a href="faq.html" class="hover:text-brand-sage transition-colors">FAQ</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-sage transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <div class="space-y-2 text-sm text-slate-300">
+                        <p>📞 (512) 555-PROPERTY</p>
+                        <p>💼 support@properties4creation.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 mt-8 pt-8 text-center text-sm text-slate-400">
+                <p>&copy; 2025 Properties 4 Creation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- P4C Interactive Libraries -->
+    <!-- Unified Header Navigation Handler -->
+    <script src="static-header.js"></script>
+
+    <!-- Interactive JavaScript Libraries -->
+    <script src="static-html.js"></script>
+    <script src="static-state.js"></script>
+    <script src="static-search.js"></script>
+    <script src="static-maps.js"></script>
+    <script src="static-forms.js"></script>
+    <script src="static-modals.js"></script>
+
+    <!-- Dynamic Imagery System -->
+    <script src="dynamic-imagery.js"></script>
+
+    <!-- Implementation Validation -->
+    <script src="validation-test.js"></script>
+
+    <!-- Insights Page Specific JavaScript -->
+    <script>
+        // Market chart initialization (placeholder for chart library integration)
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📰 P4C Insights page loaded');
+
+            // Initialize newsletter signup
+            const newsletterForm = document.querySelector('section.bg-brand-navy form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for subscribing! You\'ll receive our latest housing market insights.');
+                });
+            }
+
+            // Initialize P4C if available
+            if (window.P4C && window.P4C.init) {
+                P4C.init();
+            }
+        });
+
+        // Dynamic market data updates (simulation)
+        setTimeout(() => {
+            const metrics = document.querySelectorAll('.bg-brand-navy .grid > div');
+            if (metrics.length >= 4) {
+                // Simulate small market updates
+                metrics[0].querySelector('.text-3xl').textContent = '3.4%';
+                metrics[1].querySelector('.text-3xl').textContent = '76%';
+                metrics[2].querySelector('.text-3xl').textContent = '145%';
+                metrics[3].querySelector('.text-3xl').textContent = '↓ 16%';
+            }
+        }, 3000);
+    </script>
+
+    <!-- Initialize P4C -->
+    <script>
+        // Initialize all interactive features
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.P4C && window.P4C.init) {
+                P4C.init();
+            }
+        });
+    </script>
+</body>
+</html>

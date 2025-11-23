@@ -1,0 +1,531 @@
+/* Unified Global Styles - P4C Enhanced */
+:root {
+    /* Animation Durations */
+    --duration-fast: 0.2s;
+    --duration-normal: 0.3s;
+    --duration-slow: 0.5s;
+    --duration-slower: 0.8s;
+
+    /* Brand Colors */
+    --corporate-navy: #1e293b;
+    --corporate-emerald: #059669;
+    --corporate-red: #dc2626;
+    --corporate-tan: #475569;
+    --corporate-olive: #4d7c0f;
+    --corporate-white: #ffffff;
+
+    /* Spacing */
+    --space-section: 4rem;
+    --space-element: 1rem;
+}
+
+body {
+    font-family: 'Merriweather', 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: #334155;
+    overflow-x: hidden;
+}
+
+/* ===========================
+   ANIMATIONS
+   =========================== */
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animate-fade-in-up {
+    animation: fadeInUp var(--duration-normal) ease-out forwards;
+}
+
+/* Fade In Left Animation */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.animate-fade-in-left {
+    animation: fadeInLeft var(--duration-normal) ease-out forwards;
+}
+
+/* Fade In Right Animation */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.animate-fade-in-right {
+    animation: fadeInRight var(--duration-normal) ease-out forwards;
+}
+
+/* Scale In Animation */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.animate-scale-in {
+    animation: scaleIn var(--duration-normal) ease-out forwards;
+}
+
+/* Slide In Up Animation */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animate-slide-in-up {
+    animation: slideInUp var(--duration-slow) ease-out forwards;
+}
+
+/* Float Animation (subtle continuous) */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse Soft Animation */
+@keyframes pulseSoft {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+.animate-pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+}
+
+/* Shimmer/Glow Animation */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+.animate-shimmer {
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* ===========================
+   GLASSMORPHISM EFFECTS
+   =========================== */
+
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+    background: rgba(30, 41, 59, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(30, 41, 59, 0.2);
+}
+
+/* ===========================
+   HOVER EFFECTS
+   =========================== */
+
+.hover-lift {
+    transition: all var(--duration-normal) ease-out;
+}
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.hover-scale {
+    transition: all var(--duration-normal) ease-out;
+}
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.hover-glow {
+    transition: all var(--duration-normal) ease-out;
+}
+.hover-glow:hover {
+    box-shadow: 0 0 20px rgba(205, 133, 63, 0.5);
+}
+
+/* ===========================
+   CARD STYLES
+   =========================== */
+
+.card {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    transition: all var(--duration-normal) ease-out;
+}
+
+.card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.card.glass {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* ===========================
+   BUTTONS
+   =========================== */
+
+.btn {
+    transition: all var(--duration-normal) ease-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #CD853F 0%, #D2691E 50%, #8B4513 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(205, 133, 63, 0.4);
+}
+
+.btn-secondary {
+    background: rgba(5, 150, 105, 1);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: rgba(5, 150, 105, 0.9);
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   GRADIENT BACKGROUNDS
+   =========================== */
+
+.gradient-hero {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e293b 100%);
+}
+
+.gradient-cta {
+    background: linear-gradient(135deg, #CD853F 0%, #D2691E 50%, #8B4513 100%);
+}
+
+/* ===========================
+   ACCESSIBILITY
+   =========================== */
+
+/* High Contrast Mode */
+:root.high-contrast {
+    --corporate-navy: #000000;
+    --corporate-red: #ff0000;
+}
+
+.high-contrast body {
+    background: white;
+    color: black;
+}
+
+.high-contrast a {
+    color: #0000ff;
+    text-decoration: underline;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+:root.reduce-motion * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+}
+
+/* ===========================
+   MODERN DYNAMIC FEATURES
+   =========================== */
+
+/* Floating Elements Animation */
+@keyframes float-gentle {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-3px) rotate(0.5deg); }
+    66% { transform: translateY(2px) rotate(-0.5deg); }
+}
+.float-gentle { animation: float-gentle 4s ease-in-out infinite; }
+
+@keyframes float-delayed {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+.float-delayed {
+    animation: float-delayed 6s ease-in-out infinite;
+    animation-delay: -2s;
+}
+
+@keyframes float-slow {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-2px) scale(1.02); }
+}
+.float-slow { animation: float-slow 8s ease-in-out infinite; }
+
+/* Particle Effect */
+@keyframes particle-float {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+
+/* Gradient Text Effects */
+.gradient-text {
+    background: linear-gradient(45deg, #CD853F, #059669, #1e293b);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Interactive Hover Effects */
+.interactive-hover {
+    position: relative;
+    overflow: hidden;
+}
+
+.interactive-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s;
+}
+
+.interactive-hover:hover::before {
+    left: 100%;
+}
+
+/* Scroll-triggered animations */
+@keyframes slide-in-left {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+.slide-in-left { animation: slide-in-left 0.6s ease-out forwards; }
+
+@keyframes slide-in-right {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+.slide-in-right { animation: slide-in-right 0.6s ease-out forwards; }
+
+@keyframes slide-in-up-stagger {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+/* Staggered animations */
+.stagger-1 { animation: slide-in-up-stagger 0.8s ease-out forwards; animation-delay: 0.1s; }
+.stagger-2 { animation: slide-in-up-stagger 0.8s ease-out forwards; animation-delay: 0.2s; }
+.stagger-3 { animation: slide-in-up-stagger 0.8s ease-out forwards; animation-delay: 0.3s; }
+.stagger-4 { animation: slide-in-up-stagger 0.8s ease-out forwards; animation-delay: 0.4s; }
+
+/* Magnetic hover effect */
+.magnetic-hover {
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+}
+
+.magnetic-hover:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Pulse glow effect */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(205, 133, 63, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(205, 133, 63, 0.4), 0 0 80px rgba(205, 133, 63, 0.1);
+    }
+}
+.pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Typing effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.typing-effect {
+    overflow: hidden;
+    border-right: 2px solid;
+    white-space: nowrap;
+    animation: typing 2s steps(40) forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #059669; }
+}
+
+/* ===========================
+   RESPONSIVE UTILITIES
+   =========================== */
+
+@media (max-width: 475px) {
+    /* xs breakpoint utilities */
+    .hidden-xs {
+        display: none;
+    }
+}
+
+@media (min-width: 476px) {
+    .block-xs {
+        display: block;
+    }
+}
+
+/* ===========================
+   UTILITY CLASSES
+   =========================== */
+
+.transition-smooth {
+    transition: all var(--duration-normal) ease-out;
+}
+
+.max-w-section {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Stagger animations for lists */
+.stagger-item:nth-child(1) { animation-delay: 0s; }
+.stagger-item:nth-child(2) { animation-delay: var(--duration-fast); }
+.stagger-item:nth-child(3) { animation-delay: calc(var(--duration-fast) * 2); }
+.stagger-item:nth-child(4) { animation-delay: calc(var(--duration-fast) * 3); }
+.stagger-item:nth-child(5) { animation-delay: calc(var(--duration-fast) * 4); }
+
+/* Debug utilities */
+.debug-element {
+    outline: 2px solid #CD853F;
+    outline-offset: 2px;
+}
+
+.debug-text {
+    color: red;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   Wood Tone Gradients - Enterprise Accent Colors
+   ========================================================================== */
+
+/* Wood gradient color palette */
+.wood-gradient-from {
+    background: linear-gradient(135deg, #CD853F 0%, #DEB887 50%, #F4A460 100%);
+}
+
+.wood-gradient-button {
+    background: linear-gradient(135deg, #D2691E 0%, #CD853F 50%, #8B4513 100%);
+}
+
+.wood-gradient-accent {
+    background: linear-gradient(45deg, #CD853F 0%, #DEB887 100%);
+}
+
+.wood-gradient-border {
+    background: linear-gradient(135deg, #CD853F 0%, #F4A460 100%);
+}
+
+/* Logo wood gradient */
+.wood-logo {
+    background: linear-gradient(135deg, #CD853F 0%, #8B4513 100%);
+}
+
+/* Wood accent colors */
+.wood-accent-light {
+    color: #DEB887;
+}
+
+.wood-accent-dark {
+    color: #CD853F;
+}
+
+.wood-accent-base {
+    color: #D2691E;
+}
+
+/* Wood shadow utilities */
+.wood-shadow {
+    box-shadow: 0 4px 15px rgba(205, 133, 63, 0.3);
+}
+
+.wood-shadow-hover {
+    box-shadow: 0 8px 25px rgba(205, 133, 63, 0.4);
+}
+
+/* Wood gradient text */
+.wood-gradient-text {
+    background: linear-gradient(135deg, #CD853F 0%, #DEB887 50%, #F4A460 100%);
+    background-size: 100% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: #CD853F; /* fallback for older browsers */
+}

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Properties 4 Creations - Veteran Housing Support</title>
+    <meta name="description" content="Get in touch with Properties 4 Creations. Fair cash offers, veteran housing support, and professional renovation services nationwide.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#1e293b',
+                            beige: '#ffffff',
+                            sage: '#059669',
+                            tan: '#475569',
+                            red: '#dc2626',
+                            olive: '#4d7c0f'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Merriweather', 'serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --corporate-navy: #1e293b;
+            --corporate-emerald: #059669;
+        }
+
+        body {
+            font-family: 'Merriweather', 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-brand-beige">
+    <!-- Header -->
+    <header id="main-header" class="sticky top-0 z-50 transition-all duration-300 bg-brand-navy text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo and Brand -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3 group">
+                        <div class="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-white font-bold text-lg">P4</span>
+                        </div>
+                        <span class="text-xl font-bold group-hover:text-slate-200 transition-colors duration-200 hidden sm:inline">
+                            Properties 4 Creation
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-1">
+                    <a href="index.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">Home</a>
+                    <a href="projects.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">Our Work</a>
+                    <a href="insights.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">Insights</a>
+                    <a href="resources.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">For Veterans</a>
+                    <a href="about.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">About Us</a>
+                </nav>
+
+                <!-- Right side - CTA and Mobile Menu Button -->
+                <div class="flex items-center space-x-4">
+                    <a href="get-started.html" class="hidden lg:inline-block bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-2 rounded-lg font-semibold text-sm hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300">
+                        Get Started
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-toggle" class="lg:hidden p-2 rounded-md text-slate-200 hover:text-white hover:bg-white/10 transition-colors" aria-expanded="false" aria-label="Toggle navigation menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden border-t border-white/10 bg-brand-navy/95 backdrop-blur-sm">
+                <div class="px-4 py-4 space-y-2">
+                    <a href="index.html" class="block px-4 py-3 rounded-md text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all">Home</a>
+                    <a href="projects.html" class="block px-4 py-3 rounded-md text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all">Our Work</a>
+                    <a href="insights.html" class="block px-4 py-3 rounded-md text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all">Insights</a>
+                    <a href="resources.html" class="block px-4 py-3 rounded-md text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all">For Veterans</a>
+                    <a href="about.html" class="block px-4 py-3 rounded-md text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all">About Us</a>
+                    <a href="get-started.html" class="block w-full text-center bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-3 rounded-md font-semibold text-sm hover:shadow-lg hover:shadow-red-500/30 transition-all mt-4">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Global Search Modal -->
+    <div id="global-search-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden">
+        <div class="max-w-2xl mx-auto mt-20 bg-white rounded-lg shadow-2xl overflow-hidden">
+            <div class="p-4 border-b border-slate-200">
+                <div class="relative">
+                    <input id="search-input" type="text" placeholder="Search properties, resources, and pages..." class="w-full pl-4 pr-4 py-3 text-lg border-0 focus:ring-0 focus:outline-none" />
+                    <button id="search-close" class="absolute right-3 top-3 text-slate-400 hover:text-slate-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="search-results" class="max-h-96 overflow-y-auto"></div>
+        </div>
+    </div>
+
+    <!-- Portal Modal -->
+    <div id="portal-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden">
+        <div class="max-w-md mx-auto mt-20 bg-white rounded-lg shadow-2xl p-6 m-4">
+            <h3 class="text-2xl font-bold text-brand-navy mb-6">Choose Your Portal</h3>
+            <div class="space-y-4">
+                <button id="partner-portal" class="w-full flex items-center gap-3 p-4 bg-brand-sage/10 hover:bg-brand-sage/20 rounded-lg transition-colors">
+                    <div class="w-8 h-8 bg-brand-sage rounded-full flex items-center justify-center">
+                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                    </div>
+                    <div class="text-left">
+                        <div class="font-medium text-brand-navy">Partner Portal</div>
+                        <div class="text-sm text-slate-600">Property owners & investors</div>
+                    </div>
+                </button>
+
+                <button id="veteran-portal" class="w-full flex items-center gap-3 p-4 bg-brand-navy/10 hover:bg-brand-navy/20 rounded-lg transition-colors">
+                    <div class="w-8 h-8 bg-brand-navy rounded-full flex items-center justify-center">
+                        <span class="text-xs text-white">🇺🇸</span>
+                    </div>
+                    <div class="text-left">
+                        <div class="font-medium text-brand-navy">Veteran Services</div>
+                        <div class="text-sm text-slate-600">Housing support & resources</div>
+                    </div>
+                </button>
+            </div>
+            <button id="portal-close" class="mt-6 w-full px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:border-slate-400 transition-colors">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-brand-navy to-brand-tan text-white py-20">
+            <div class="max-w-6xl mx-auto px-4 text-center animate-fade-in-up">
+                <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6">
+                    Get in Touch
+                    <span class="block text-brand-sage">We're Here to Help</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-200 mb-8 max-w-3xl mx-auto">
+                    Connect with our team for fair cash offers, veteran housing support, or information about our renovation services nationwide.
+                </p>
+                <div class="flex items-center justify-center gap-8 text-slate-300">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold">📞</div>
+                        <div class="text-sm">(512) 555-PROPERTY</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold">💼</div>
+                        <div class="text-sm">support@properties4creation.com</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold">🕒</div>
+                        <div class="text-sm">Mon-Fri 8AM-6PM CDT</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Content -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="space-y-8">
+                        <div>
+                            <h2 class="text-3xl font-bold text-brand-navy mb-4">Send Us a Message</h2>
+                            <p class="text-slate-600 mb-8">
+                                Have questions about your property? Need information about veteran housing programs? Our team is ready to assist.
+                            </p>
+                        </div>
+
+                        <form class="space-y-6" id="contact-form" novalidate>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2">First Name *</label>
+                                    <input type="text" id="first-name" name="firstName" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2">Last Name *</label>
+                                    <input type="text" id="last-name" name="lastName" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Email *</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Phone</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Subject *</label>
+                                <select id="subject" name="subject" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent">
+                                    <option value="">Select a topic...</option>
+                                    <option value="cash-offer">Get a Cash Offer</option>
+                                    <option value="veteran-support">Veteran Housing Support</option>
+                                    <option value="renovation">Property Renovation</option>
+                                    <option value="section-8">Section 8 Information</option>
+                                    <option value="partnership">Business Partnership</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Message *</label>
+                                <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent resize-none" placeholder="Tell us about your situation..."></textarea>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="newsletter" name="newsletter" class="mt-1">
+                                <label for="newsletter" class="text-sm text-slate-600">
+                                    I'd like to receive market insights and housing tips from Properties 4 Creations.
+                                </label>
+                            </div>
+
+                            <button type="submit" class="w-full bg-brand-sage hover:bg-brand-navy text-white py-4 rounded-lg font-semibold transition-colors">
+                                Send Message
+                            </button>
+
+                            <p class="text-xs text-slate-500 text-center">
+                                * Required fields. By submitting this form, you agree to our
+                                <a href="privacy.html" class="text-brand-sage hover:underline">Privacy Policy</a>.
+                            </p>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="space-y-8">
+                        <!-- Quick Stats -->
+                        <div class="bg-slate-50 rounded-lg p-8">
+                            <h3 class="text-2xl font-bold text-brand-navy mb-6">Why Choose Properties 4 Creations?</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-brand-sage rounded-full flex items-center justify-center">
+                                        <span class="text-2xl">🏠</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-brand-navy">Fair Cash Offers</div>
+                                        <div class="text-sm text-slate-600">Average $25k above market value</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-brand-sage rounded-full flex items-center justify-center">
+                                        <span class="text-2xl">🇺🇸</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-brand-navy">Veteran Veterans</div>
+                                        <div class="text-sm text-slate-600">42 veterans housed this year</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-brand-sage rounded-full flex items-center justify-center">
+                                        <span class="text-2xl">⚡</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-brand-navy">Fast Process</div>
+                                        <div class="text-sm text-slate-600">Cash offer within 24 hours</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-brand-sage rounded-full flex items-center justify-center">
+                                        <span class="text-2xl">🔨</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-brand-navy">Premium Renovations</div>
+                                        <div class="text-sm text-slate-600">$120k+ renovation value added</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Methods -->
+                        <div class="bg-white border border-slate-200 rounded-lg p-8">
+                            <h3 class="text-2xl font-bold text-brand-navy mb-6">Multiple Ways to Connect</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 bg-brand-sage rounded-full flex items-center justify-center text-white">
+                                        📞
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-brand-navy">Phone Support</div>
+                                        <div class="text-brand-sage font-medium">(512) 555-PROPERTY</div>
+                                        <div class="text-sm text-slate-600">Available Mon-Fri 8AM-6PM CDT</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 bg-brand-sage rounded-full flex items-center justify-center text-white">
+                                        💼
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-brand-navy">Business Inquiries</div>
+                                        <div class="text-brand-sage font-medium">support@properties4creation.com</div>
+                                        <div class="text-sm text-slate-600">Investment and Partnership opportunities</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 bg-brand-sage rounded-full flex items-center justify-center text-white">
+                                        🏛️
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-brand-navy">Veteran Support</div>
+                                        <div class="text-brand-sage font-medium">veterans@properties4creation.com</div>
+                                        <div class="text-sm text-slate-600">Housing assistance and program information</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Emergency Contact -->
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                            <div class="flex items-start gap-3">
+                                <div class="text-red-600">⚠️</div>
+                                <div>
+                                    <h4 class="font-bold text-red-800 mb-2">Housing Emergency?</h4>
+                                    <p class="text-red-700 text-sm mb-3">If you're facing eviction or homelessness, we have resources to help.</p>
+                                    <button class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors text-sm font-medium">
+                                        Get Emergency Assistance
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Properties 4 Creations</h3>
+                    <p class="text-slate-300 text-sm">
+                        Connecting veterans with quality homes through fair market practices.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><a href="properties.html" class="hover:text-brand-sage transition-colors">Property Sales</a></li>
+                        <li><a href="renovations.html" class="hover:text-brand-sage transition-colors">Renovations</a></li>
+                        <li><a href="management.html" class="hover:text-brand-sage transition-colors">Management</a></li>
+                        <li><a href="consulting.html" class="hover:text-brand-sage transition-colors">Consulting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><a href="resources/section8.html" class="hover:text-brand-sage transition-colors">Section 8 Guide</a></li>
+                        <li><a href="resources/voucher-calculator.html" class="hover:text-brand-sage transition-colors">Cost Calculator</a></li>
+                        <li><a href="insights.html" class="hover:text-brand-sage transition-colors">Market Insights</a></li>
+                        <li><a href="faq.html" class="hover:text-brand-sage transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <div class="space-y-2 text-sm text-slate-300">
+                        <p>📞 (512) 555-PROPERTY</p>
+                        <p>💼 support@properties4creation.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 mt-8 pt-8 text-center text-sm text-slate-400">
+                <p>&copy; 2025 Properties 4 Creations. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- P4C Interactive Libraries -->
+    <!-- Unified Header Navigation Handler -->
+    <script src="static-header.js"></script>
+
+    <!-- Interactive JavaScript Libraries -->
+    <script src="static-html.js"></script>
+    <script src="static-state.js"></script>
+    <script src="static-search.js"></script>
+    <script src="static-maps.js"></script>
+    <script src="static-forms.js"></script>
+    <script src="static-modals.js"></script>
+
+    <!-- Dynamic Imagery System -->
+    <script src="dynamic-imagery.js"></script>
+
+    <!-- Implementation Validation -->
+    <script src="validation-test.js"></script>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+                });
+
+                // Close menu on link click
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+
+            // Initialize all interactive features
+            window.P4C.init();
+        });
+    </script>
+</body>
+</html>

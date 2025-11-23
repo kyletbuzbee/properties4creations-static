@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties 4 Creations - Veteran Housing Properties</title>
+    <meta name="description" content="Discover fair cash offers and quality renovations for veteran housing. Section 8 ready properties with veteran priority pricing.">
+
+    <!-- Structured Data for Property Listings -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://properties4creations.com/#organization",
+          "name": "Properties 4 Creation",
+          "alternateName": "P4C",
+          "url": "https://properties4creations.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://properties4creations.com/public/images/logo/Properties 4 Creations.png"
+          },
+          "sameAs": [],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-903-647-0000",
+            "contactType": "customer service",
+            "availableLanguage": "English"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 S Broadway Ave",
+            "addressLocality": "Tyler",
+            "addressRegion": "TX",
+            "postalCode": "75701",
+            "addressCountry": "US"
+          }
+        },
+        {
+          "@type": "RealEstateAgent",
+          "@id": "https://properties4creations.com/#realestateagent",
+          "name": "Properties 4 Creation",
+          "description": "Specialized real estate services for veterans and affordable housing solutions",
+          "url": "https://properties4creations.com",
+          "telephone": "+1-903-647-0000",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tyler",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          },
+          "areaServed": {
+            "@type": "State",
+            "name": "Texas",
+            "containedInPlace": {
+              "@type": "Country",
+              "name": "United States"
+            }
+          },
+          "specialty": [
+            "Veteran Housing",
+            "Section 8 Properties",
+            "Renovation Services",
+            "Fair Market Pricing"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://properties4creations.com/projects#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://properties4creations.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Projects",
+              "item": "https://properties4creations.com/projects.html"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://properties4creations.com/projects#propertylist",
+          "name": "Veteran Housing Properties",
+          "description": "Available Section 8 ready properties with veteran priority pricing",
+          "numberOfItems": 3,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "SingleFamilyResidence",
+                "name": "Downtown Austin Renovation",
+                "description": "Section 8 ready property with veteran priority pricing in downtown Austin",
+                "url": "https://properties4creations.com/projects/downtown-austin-renovation.html",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Austin",
+                  "addressRegion": "TX",
+                  "addressCountry": "US"
+                },
+                "numberOfBedRooms": 2,
+                "numberOfBathroomsTotal": 2,
+                "floorSize": {
+                  "@type": "QuantitativeValue",
+                  "value": 1200,
+                  "unitCode": "FTK"
+                },
+                "amenityFeature": [
+                  {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Modern Kitchen"
+                  },
+                  {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Hardwood Floors"
+                  },
+                  {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Pet Friendly"
+                  }
+                ]
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "SingleFamilyResidence",
+                "name": "South Congress Lofts",
+                "description": "Historic building conversion with modern amenities in downtown Austin",
+                "url": "https://properties4creations.com/projects/south-congress-lofts.html",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Austin",
+                  "addressRegion": "TX",
+                  "addressCountry": "US"
+                },
+                "numberOfBedRooms": 3,
+                "numberOfBathroomsTotal": 2,
+                "floorSize": {
+                  "@type": "QuantitativeValue",
+                  "value": 1800,
+                  "unitCode": "FTK"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "SingleFamilyResidence",
+                "name": "Riverside Gardens",
+                "description": "Waterfront garden apartment near Lady Bird Lake",
+                "url": "https://properties4creations.com/projects/riverside-gardens.html",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Austin",
+                  "addressRegion": "TX",
+                  "addressCountry": "US"
+                },
+                "numberOfBedRooms": 1,
+                "numberOfBathroomsTotal": 1,
+                "floorSize": {
+                  "@type": "QuantitativeValue",
+                  "value": 850,
+                  "unitCode": "FTK"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#1e293b',
+                            beige: '#ffffff',
+                            sage: '#059669',
+                            tan: '#475569',
+                            red: '#dc2626',
+                            olive: '#4d7c0f'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Merriweather', 'serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --corporate-navy: #1e293b;
+            --corporate-emerald: #059669;
+        }
+
+        body {
+            font-family: 'Merriweather', 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-brand-beige">
+    <!-- Header -->
+    <header id="main-header" class="sticky top-0 z-50 transition-all duration-300 bg-brand-navy text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo and Brand -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3 group">
+                        <div class="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-white font-bold text-lg">P4</span>
+                        </div>
+                        <span class="text-xl font-bold group-hover:text-slate-200 transition-colors duration-200 hidden sm:inline">
+                            Properties 4 Creation
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-1">
+                    <a href="index.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">Home</a>
+                    <a href="projects.html" class="px-3 py-2 text-sm font-medium rounded-md bg-white/20 text-white transition-all duration-200">Our Work</a>
+                    <a href="insights.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">Insights</a>
+                    <a href="resources.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">For Veterans</a>
+                    <a href="about.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">About Us</a>
+                </nav>
+
+                <!-- Right side - CTA and Mobile Menu Button -->
+                <div class="flex items-center space-x-4">
+                    <a href="get-started.html" class="hidden lg:inline-block bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-2 rounded-lg font-semibold text-sm hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300">
+                        Get Started
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-toggle" class="lg:hidden p-2 rounded-md text-slate-200 hover:text-white hover:bg-white/10 transition-colors" aria-expanded="false" aria-label="Toggle navigation menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden border-t border-white/10 bg-brand-navy/95 backdrop-blur-sm">
+                <div class="px-4 py-4 space-y-2">
+                    <a href="index.html" class="block px-4 py-3 rounded-md text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all">Home</a>
+                    <a href="projects.html" class="block px-4 py-3 rounded-md text-base font-medium bg-white/20 text-white transition-all">Our Work</a>
+                    <a href="insights.html" class="block px-4 py-3 rounded-md text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all">Insights</a>
+                    <a href="resources.html" class="block px-4 py-3 rounded-md text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all">For Veterans</a>
+                    <a href="about.html" class="block px-4 py-3 rounded-md text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all">About Us</a>
+                    <a href="get-started.html" class="block w-full text-center bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-3 rounded-md font-semibold text-sm hover:shadow-lg hover:shadow-red-500/30 transition-all mt-4">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Global Search Modal -->
+    <div id="global-search-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden">
+        <div class="max-w-2xl mx-auto mt-20 bg-white rounded-lg shadow-2xl overflow-hidden">
+            <div class="p-4 border-b border-slate-200">
+                <div class="relative">
+                    <input id="search-input" type="text" placeholder="Search properties, resources, and pages..." class="w-full pl-4 pr-4 py-3 text-lg border-0 focus:ring-0 focus:outline-none" />
+                    <button id="search-close" class="absolute right-3 top-3 text-slate-400 hover:text-slate-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="search-results" class="max-h-96 overflow-y-auto">
+            </div>
+        </div>
+    </div>
+
+    <!-- Portal Modal -->
+    <div id="portal-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden">
+        <div class="max-w-md mx-auto mt-20 bg-white rounded-lg shadow-2xl p-6 m-4">
+            <h3 class="text-2xl font-bold text-brand-navy mb-6">Choose Your Portal</h3>
+            <div class="space-y-4">
+                <button id="partner-portal" class="w-full flex items-center gap-3 p-4 bg-brand-sage/10 hover:bg-brand-sage/20 rounded-lg transition-colors">
+                    <div class="w-8 h-8 bg-brand-sage rounded-full flex items-center justify-center">
+                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                    </div>
+                    <div class="text-left">
+                        <div class="font-medium text-brand-navy">Partner Portal</div>
+                        <div class="text-sm text-slate-600">Property owners & investors</div>
+                    </div>
+                </button>
+
+                <button id="veteran-portal" class="w-full flex items-center gap-3 p-4 bg-brand-navy/10 hover:bg-brand-navy/20 rounded-lg transition-colors">
+                    <div class="w-8 h-8 bg-brand-navy rounded-full flex items-center justify-center">
+                        <span class="text-xs text-white">🇺🇸</span>
+                    </div>
+                    <div class="text-left">
+                        <div class="font-medium text-brand-navy">Veteran Services</div>
+                        <div class="text-sm text-slate-600">Housing support & resources</div>
+                    </div>
+                </button>
+            </div>
+            <button id="portal-close" class="mt-6 w-full px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:border-slate-400 transition-colors">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-brand-navy to-brand-tan text-white py-20">
+            <div class="max-w-6xl mx-auto px-4 text-center animate-fade-in-up">
+                <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6">
+                    Veteran Housing
+                    <span class="block text-brand-sage">With Fair Cash Offers</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-200 mb-8 max-w-3xl mx-auto">
+                    We provide fair market value offers and professional renovations for veterans. No hidden fees, no pressure tactics - just honest housing solutions.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#properties" class="px-8 py-4 bg-brand-sage hover:bg-brand-sage/90 text-white rounded-lg font-semibold transition-all hover:shadow-xl">
+                        Browse Properties →
+                    </a>
+                    <a href="get-started.html" class="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-brand-navy rounded-lg font-semibold transition-all">
+                        Get Fair Offer
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter/Search Bar -->
+        <section class="py-8 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex flex-wrap gap-4 items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <select class="px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                            <option>All Properties</option>
+                            <option>Section 8 Ready</option>
+                            <option>Veteran Priority</option>
+                            <option>Market Rate</option>
+                        </select>
+                        <select class="px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                            <option>All Locations</option>
+                            <option>Downtown Austin</option>
+                            <option>South Congress</option>
+                            <option>East Austin</option>
+                        </select>
+                        <select class="px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                            <option>Any Price</option>
+                            <option>$800-$1200</option>
+                            <option>$1200-$1600</option>
+                            <option>$1600+</option>
+                        </select>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <button class="p-2 text-slate-400 hover:text-slate-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                            </svg>
+                        </button>
+                        <button class="p-2 text-slate-400 hover:text-slate-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Properties Grid -->
+        <section id="properties" class="py-16 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Property Card 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
+                                 alt="Downtown Austin Renovation" class="w-full h-64 object-cover">
+                            <div class="absolute top-3 left-3 flex gap-2">
+                                <span class="px-3 py-1 bg-brand-sage text-white text-sm font-semibold rounded-full">
+                                    Section 8 Ready
+                                </span>
+                            </div>
+                            <div class="absolute top-3 right-3">
+                                <span class="px-3 py-1 bg-green-500 text-white text-sm font-semibold rounded-full">
+                                    Veteran Priority
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-start justify-between mb-2">
+                                <h3 class="text-xl font-bold text-brand-navy">Downtown Austin Renovation</h3>
+                                <span class="text-2xl font-bold text-brand-sage">$1,200/mo</span>
+                            </div>
+
+                            <div class="flex items-center text-slate-600 text-sm mb-4">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                                Downtown Austin, TX
+                            </div>
+
+                            <div class="flex items-center gap-4 text-sm text-slate-600 mb-4">
+                                <span>2 Bedrooms</span>
+                                <span>•</span>
+                                <span>2 Bathrooms</span>
+                                <span>•</span>
+                                <span>1,200 sq ft</span>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full">Modern Kitchen</span>
+                                <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full">Hardwood Floors</span>
+                                <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full">Pet Friendly</span>
+                            </div>
+
+                            <a href="projects/downtown-austin-renovation.html"
+                               class="w-full block text-center px-4 py-3 bg-brand-sage hover:bg-brand-navy text-white rounded-lg font-medium transition-colors">
+                                View Property Details
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Property Card 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
+                                 alt="South Congress Lofts" class="w-full h-64 object-cover">
+                            <div class="absolute top-3 left-3">
+                                <span class="px-3 py-1 bg-blue-500 text-white text-sm font-semibold rounded-full">
+                                    Market Rate
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-start justify-between mb-2">
+                                <h3 class="text-xl font-bold text-brand-navy">South Congress Lofts</h3>
+                                <span class="text-2xl font-bold text-brand-sage">$1,800/mo</span>
+                            </div>
+
+                            <div class="flex items-center text-slate-600 text-sm mb-4">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                                South Congress, Austin, TX
+                            </div>
+
+                            <div class="flex items-center gap-4 text-sm text-slate-600 mb-4">
+                                <span>3 Bedrooms</span>
+                                <span>•</span>
+                                <span>2 Bathrooms</span>
+                                <span>•</span>
+                                <span>1,800 sq ft</span>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full">Historic Building</span>
+                                <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full">Pet Friendly</span>
+                                <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full">Bike Storage</span>
+                            </div>
+
+                            <a href="projects/south-congress-lofts.html"
+                               class="w-full block text-center px-4 py-3 bg-brand-sage hover:bg-brand-navy text-white rounded-lg font-medium transition-colors">
+                                View Property Details
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Property Card 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
+                                 alt="Riverside Gardens" class="w-full h-64 object-cover">
+                            <div class="absolute top-3 left-3 flex gap-2">
+                                <span class="px-3 py-1 bg-brand-sage text-white text-sm font-semibold rounded-full">
+                                    Section 8 Ready
+                                </span>
+                            </div>
+                            <div class="absolute top-3 right-3">
+                                <span class="px-3 py-1 bg-green-500 text-white text-sm font-semibold rounded-full">
+                                    Waterfront
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-start justify-between mb-2">
+                                <h3 class="text-xl font-bold text-brand-navy">Riverside Gardens</h3>
+                                <span class="text-2xl font-bold text-brand-sage">$950/mo</span>
+                            </div>
+
+                            <div class="flex items-center text-slate-600 text-sm mb-4">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                                Near Lady Bird Lake, Austin, TX
+                            </div>
+
+                            <div class="flex items-center gap-4 text-sm text-slate-600 mb-4">
+                                <span>1 Bedroom</span>
+                                <span>•</span>
+                                <span>1 Bathroom</span>
+                                <span>•</span>
+                                <span>850 sq ft</span>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full">Garden Views</span>
+                                <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full">Patio Access</span>
+                                <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full">Laundry Facility</span>
+                            </div>
+
+                            <a href="projects/riverside-gardens.html"
+                               class="w-full block text-center px-4 py-3 bg-brand-sage hover:bg-brand-navy text-white rounded-lg font-medium transition-colors">
+                                View Property Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More -->
+                <div class="text-center mt-12">
+                    <button class="px-8 py-4 bg-brand-navy hover:bg-brand-navy/90 text-white rounded-lg font-semibold transition-colors hover:shadow-xl">
+                        Load More Properties
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Properties 4 Creations</h3>
+                    <p class="text-slate-300 text-sm">
+                        Connecting veterans with quality homes through fair market practices.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><a href="properties.html" class="hover:text-brand-sage transition-colors">Property Sales</a></li>
+                        <li><a href="renovations.html" class="hover:text-brand-sage transition-colors">Renovations</a></li>
+                        <li><a href="management.html" class="hover:text-brand-sage transition-colors">Management</a></li>
+                        <li><a href="consulting.html" class="hover:text-brand-sage transition-colors">Consulting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><a href="resources/section8.html" class="hover:text-brand-sage transition-colors">Section 8 Guide</a></li>
+                        <li><a href="resources/voucher-calculator.html" class="hover:text-brand-sage transition-colors">Cost Calculator</a></li>
+                        <li><a href="insights.html" class="hover:text-brand-sage transition-colors">Market Insights</a></li>
+                        <li><a href="faq.html" class="hover:text-brand-sage transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <div class="space-y-2 text-sm text-slate-300">
+                        <p>📞 (512) 555-PROPERTY</p>
+                        <p>💼 support@properties4creation.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 mt-8 pt-8 text-center text-sm text-slate-400">
+                <p>&copy; 2025 Properties 4 Creations. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- P4C Interactive Libraries -->
+    <!-- Unified Header Navigation Handler -->
+    <script src="static-header.js"></script>
+
+    <!-- Interactive JavaScript Libraries -->
+    <script src="static-html.js"></script>
+    <script src="static-state.js"></script>
+    <script src="static-search.js"></script>
+    <script src="static-maps.js"></script>
+    <script src="static-forms.js"></script>
+    <script src="static-modals.js"></script>
+
+    <!-- Dynamic Imagery System -->
+    <script src="dynamic-imagery.js"></script>
+
+    <!-- Implementation Validation -->
+    <script src="validation-test.js"></script>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+                });
+
+                // Close menu on link click
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+
+            // Initialize all interactive features
+            window.P4C.init();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+/* P4C Critical CSS - Above the Fold Styles */
+/* Load this synchronously for optimal rendering performance */
+
+:root {
+    /* ==================================================
+       P4C COLOR SYSTEM - WOOD & NAVY ENTERPRISE DESIGN
+       ================================================== */
+
+    /* Wood - Trust & Credibility */
+    --wood-50:  #fbf7f1; --wood-100: #f5ebdc; --wood-200: #e8d4b5;
+    --wood-300: #dcb98a; --wood-400: #d09a5b; --wood-500: #cd853f;
+    --wood-600: #b06a2e; --wood-700: #8f5226; --wood-800: #754324;
+    --wood-900: #5f3720;
+
+    /* Navy - Authority & Stability */
+    --navy-50:  #f8fafc; --navy-100: #f1f5f9; --navy-200: #e2e8f0;
+    --navy-300: #cbd5e1; --navy-400: #94a3b8; --navy-500: #64748b;
+    --navy-600: #475569; --navy-700: #334155; --navy-800: #1e293b;
+    --navy-900: #0f172a;
+
+    /* SEMANTIC THEME SYSTEM */
+    --primary:          var(--navy-900);    /* Primary text/actions */
+    --secondary:        var(--navy-800);    /* Secondary elements */
+    --accent:           var(--wood-500);    /* CTAs, links, accents */
+    --success:          var(--wood-600);    /* Positive actions */
+    --background:       var(--wood-50);     /* Page background */
+    --surface:          #ffffff;            /* Card/component backgrounds */
+    --border:           var(--navy-200);    /* Subtle borders */
+
+    /* LEGACY COMPATIBILITY */
+    --corporate-navy: var(--navy-900);      /* For transition period */
+    --corporate-emerald: var(--accent);     /* Wood primary */
+    --corporate-red: var(--wood-500);       /* Wood instead of red */
+    --corporate-tan: var(--navy-600);
+    --corporate-olive: var(--wood-700);
+    --corporate-white: #ffffff;
+
+    /* ==================================================
+       PERFORMANCE & ANIMATION SYSTEM
+       ================================================== */
+
+    /* Animation Durations */
+    --duration-fast: 0.15s;
+    --duration-normal: 0.3s;
+    --duration-slow: 0.5s;
+    --duration-slower: 0.8s;
+
+    /* Optimized Shadows */
+    --shadow-primary:   0 1px 3px rgba(15, 23, 42, 0.12);
+    --shadow-secondary: 0 4px 6px rgba(15, 23, 42, 0.07);
+    --shadow-accent:    0 10px 15px rgba(205, 133, 63, 0.2);
+    --shadow-floating:  0 20px 25px rgba(15, 23, 42, 0.1);
+
+    /* ==================================================
+       TYPOGRAPHY & SPACING SYSTEM
+       ================================================== */
+
+    /* Modular Spacing Scale */
+    --space-xs: 0.25rem; --space-sm: 0.5rem;  --space-md: 1rem;
+    --space-lg: 1.5rem;  --space-xl: 2rem;    --space-2xl: 3rem;
+    --space-3xl: 4rem;   --space-section: 5rem;
+}
+
+/* Critical Typography */
+body {
+    font-family: 'Merriweather', 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: #334155;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Critical Navigation Styles */
+header {
+    font-family: inherit;
+}
+
+button, a {
+    cursor: pointer;
+}
+
+/* Critical Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Critical High Contrast Support */
+:root.high-contrast body {
+    background: white;
+    color: black;
+}
+
+:root.high-contrast a {
+    color: #0000ff;
+    text-decoration: underline;
+}
+
+/* Critical Layout Foundations - Only essential responsive utilities */
+.max-w-section {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Critical transition support */
+.transition-smooth {
+    transition: all var(--duration-normal) ease-out;
+}
+
+/* Standard Google Fonts Import - More Reliable */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap');
+
+/* ==================================================
+   ABOVE-THE-FOLD UTILITIES - CRITICAL CSS EXPANSION
+   ================================================== */
+
+/* Container & Layout */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+.max-w-7xl { max-width: 80rem; }
+.max-w-6xl { max-width: 72rem; }
+.max-w-section { max-width: 1280px; margin: 0 auto; }
+
+/* Flexbox System */
+.flex { display: flex; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-end { justify-content: flex-end; }
+.flex-1 { flex: 1 1 0%; }
+.flex-shrink-0 { flex-shrink: 0; }
+
+/* Grid System */
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+/* Spacing */
+.m-0 { margin: 0; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.mt-4 { margin-top: 1rem; }
+.mb-4 { margin-bottom: 1rem; }
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+.p-8 { padding: 2rem; }
+.px-0 { padding-left: 0; padding-right: 0; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.px-8 { padding-left: 2rem; padding-right: 2rem; }
+.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+.py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+
+/* Width & Height */
+.w-6 { width: 1.5rem; }
+.w-8 { width: 2rem; }
+.w-10 { width: 2.5rem; }
+.w-12 { width: 3rem; }
+.w-16 { width: 4rem; }
+.w-24 { width: 6rem; }
+.w-32 { width: 8rem; }
+.h-6 { height: 1.5rem; }
+.h-8 { height: 2rem; }
+.h-10 { height: 2.5rem; }
+.h-12 { height: 3rem; }
+.h-16 { height: 4rem; }
+.h-24 { height: 6rem; }
+.h-32 { height: 8rem; }
+.h-64 { height: 16rem; }
+.min-h-\[600px\] { min-height: 600px; }
+
+/* Text & Typography */
+.text-xs { font-size: 0.75rem; line-height: 1rem; }
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.text-base { font-size: 1rem; line-height: 1.5rem; }
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }
+.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+.text-5xl { font-size: 3rem; line-height: 1; }
+
+.font-bold { font-weight: 700; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.leading-tight { line-height: 1.25; }
+
+/* Colors & Themes */
+.bg-brand-navy { background-color: var(--navy-900); }
+.text-brand-navy { color: var(--navy-900); }
+.wood-accent-base { color: var(--wood-500); }
+.text-white { color: #ffffff; }
+.text-slate-100 { color: #f1f5f9; }
+.text-slate-200 { color: #e2e8f0; }
+.text-slate-300 { color: #cbd5e1; }
+.text-slate-600 { color: #475569; }
+.bg-white { background-color: #ffffff; }
+.bg-slate-50 { background-color: #f8fafc; }
+
+/* Responsive Breakpoints */
+@media (min-width: 640px) {
+    .sm\:hidden { display: none; }
+    .sm\:block { display: block; }
+    .sm\:inline { display: inline; }
+    .sm\:flex { display: flex; }
+}
+
+@media (min-width: 768px) {
+    .md\:hidden { display: none; }
+    .md\:block { display: block; }
+    .md\:flex { display: flex; }
+    .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .md\:ml-16 { margin-left: 4rem; }
+    .md\:p-10 { padding: 2.5rem; }
+    .md\:text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+    .md\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+    .md\:text-5xl { font-size: 3rem; line-height: 1; }
+    .md\:text-6xl { font-size: 3.75rem; line-height: 1; }
+    .md\:text-7xl { font-size: 4.5rem; line-height: 1; }
+}
+
+@media (min-width: 1024px) {
+    .lg\:hidden { display: none; }
+    .lg\:flex { display: flex; }
+    .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .lg\:col-span-2 { grid-column: span 2 / span 2; }
+}
+
+/* Shadows */
+.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+.shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+
+/* Borders */
+.border { border-width: 1px; border-color: var(--border); }
+.border-2 { border-width: 2px; }
+.border-slate-100 { border-color: #f1f5f9; }
+.border-slate-200 { border-color: #e2e8f0; }
+.border-slate-300 { border-color: #cbd5e1; }
+
+/* Positioning */
+.absolute { position: absolute; }
+.relative { position: relative; }
+.top-0 { top: 0; }
+.left-0 { left: 0; }
+.bottom-0 { bottom: 0; }
+.right-0 { right: 0; }
+.inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+.z-10 { z-index: 10; }
+.z-50 { z-index: 50; }
+
+/* Transforms */
+.transform { transform: translate(var(--tw-transform)); }
+.-translate-x-1\/2 { transform: translateX(-50%); }
+.translate-y-0 { transform: translateY(0); }
+
+/* Hover States */
+.hover\:scale-105:hover { transform: scale(1.05); }
+.hover\:shadow-2xl:hover { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+
+/* Transitions */
+.transition-all { transition-property: all; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+.transition-colors { transition-property: color, background-color, border-color; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+.transition-opacity { transition-property: opacity; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+.duration-300 { transition-duration: 300ms; }
+.duration-700 { transition-duration: 700ms; }
+
+/* Lists */
+.divide-x > * + * { border-left-width: 1px; border-color: var(--border); }
+.divide-y > * + * { border-top-width: 1px; border-color: var(--border); }
+
+/* Overflow */
+.overflow-hidden { overflow: hidden; }
+.object-cover { object-fit: cover; }
+
+/* Animations (Critical Only) */
+.animate-bounce { animation: bounce 1s infinite; }
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}

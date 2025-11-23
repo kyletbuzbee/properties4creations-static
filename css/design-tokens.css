@@ -1,0 +1,713 @@
+/**
+ * ============================================================================
+ * DESIGN TOKENS SYSTEM
+ * Enterprise Real Estate / Veteran Housing Website
+ * 
+ * This file serves as the single source of truth for all design decisions.
+ * All color, typography, spacing, and component styling should reference
+ * these tokens to maintain consistency across the platform.
+ * 
+ * Structure:
+ * 1. CSS Custom Properties (Variables) - Foundation layer
+ * 2. Semantic Color Classes - Utility-style color system
+ * 3. Typography Utilities - Font size and weight classes
+ * 4. Component Base Classes - Reusable component patterns
+ * 5. Advanced Depth & Effects - Visual hierarchy utilities
+ * 6. Accessibility & Focus States - A11y compliance
+ * ============================================================================
+ */
+
+
+/* ============================================================================
+ * SECTION 1: CSS CUSTOM PROPERTIES (VARIABLES)
+ * Foundation layer for all design tokens
+ * ============================================================================ */
+
+:root {
+  /* -----------------------------------------------------------------------
+   * 1.1 COLOR PALETTE (60-30-10 Design Rule)
+   * Primary (60%): Navy & Neutral Foundation
+   * Secondary (30%): Accent Colors for Visual Interest
+   * Tertiary (10%): Accent Highlights
+   * ----------------------------------------------------------------------- */
+
+  /* Primary Colors - 60% neutral with navy anchor */
+  --color-primary-navy: #0B1120;
+  --color-primary-navy-light: #1A1F35;
+  --color-primary-navy-lighter: #2A3050;
+
+  /* Neutral Foundation Colors */
+  --color-neutral-white: #FFFFFF;
+  --color-neutral-beige: #F5F5F0;
+  --color-neutral-slate-50: #F8F9FA;
+  --color-neutral-slate-100: #F3F4F6;
+  --color-neutral-slate-200: #E5E7EB;
+  --color-neutral-slate-300: #D1D5DB;
+  --color-neutral-slate-400: #9CA3AF;
+  --color-neutral-slate-500: #6B7280;
+  --color-neutral-slate-600: #4B5563;
+  --color-neutral-slate-700: #374151;
+
+  /* Accent Colors - Wood/Gold Palette (30% visual interest) */
+  --color-accent-gold: #C28E5A;
+  --color-accent-gold-light: #DEB887;
+  --color-accent-gold-lighter: #E8D4B8;
+  
+  /* Secondary Accent - Walnut (10% highlights) */
+  --color-secondary-walnut: #8B5E3C;
+  --color-secondary-walnut-dark: #6B4423;
+
+  /* Semantic Status Colors */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+
+  /* -----------------------------------------------------------------------
+   * 1.2 TYPOGRAPHY SCALE
+   * Strict enterprise hierarchy for readable and accessible content
+   * ----------------------------------------------------------------------- */
+
+  /* Font Families */
+  --font-heading: 'Merriweather', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'Courier New', monospace;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Heading Sizes - H1 (Hero Only) */
+  --text-h1-size: clamp(2.5rem, 8vw, 4.5rem);
+  --text-h1-line-height: 1.1;
+  --text-h1-weight: var(--font-weight-bold);
+  --text-h1-family: var(--font-heading);
+
+  /* Heading Sizes - H2 (Section Headers) */
+  --text-h2-size: 2.5rem;
+  --text-h2-line-height: 1.2;
+  --text-h2-weight: var(--font-weight-bold);
+  --text-h2-family: var(--font-heading);
+
+  /* Heading Sizes - H3 (Card Headers) */
+  --text-h3-size: 1.5rem;
+  --text-h3-line-height: 1.3;
+  --text-h3-weight: var(--font-weight-semibold);
+  --text-h3-family: var(--font-heading);
+
+  /* Heading Sizes - H4 */
+  --text-h4-size: 1.25rem;
+  --text-h4-line-height: 1.4;
+  --text-h4-weight: var(--font-weight-semibold);
+  --text-h4-family: var(--font-heading);
+
+  /* Body Text - Default */
+  --text-body-size: 1rem;
+  --text-body-line-height: 1.6;
+  --text-body-weight: var(--font-weight-normal);
+  --text-body-family: var(--font-body);
+
+  /* Small Text */
+  --text-small-size: 0.875rem;
+  --text-small-line-height: 1.5;
+  --text-small-weight: var(--font-weight-normal);
+  --text-small-family: var(--font-body);
+
+  /* Micro Copy - Captions, Labels, Meta */
+  --text-micro-size: 0.75rem;
+  --text-micro-line-height: 1.4;
+  --text-micro-weight: var(--font-weight-medium);
+  --text-micro-family: var(--font-body);
+  --text-micro-letter-spacing: 0.1em;
+  --text-micro-text-transform: uppercase;
+
+  /* -----------------------------------------------------------------------
+   * 1.3 SHADOWS (Brand-Tinted with Navy)
+   * Creates visual depth and hierarchy with subtle navy tints
+   * ----------------------------------------------------------------------- */
+
+  /* Subtle Shadow - Minimal elevation (hover states) */
+  --shadow-subtle: 0 2px 8px rgba(11, 17, 32, 0.08);
+
+  /* Medium Shadow - Moderate elevation (cards, dropdowns) */
+  --shadow-medium: 0 10px 25px rgba(11, 17, 32, 0.15);
+
+  /* Strong Shadow - High elevation (modals, popovers) */
+  --shadow-strong: 0 20px 50px rgba(11, 17, 32, 0.25);
+
+  /* Wood-Tinted Shadow - Accent-colored elevation */
+  --shadow-wood: 0 10px 25px rgba(194, 142, 90, 0.15);
+
+  /* Floating Shadow - Maximum depth (sticky headers, floating buttons) */
+  --shadow-floating: 0 20px 50px rgba(11, 17, 32, 0.35);
+
+  /* -----------------------------------------------------------------------
+   * 1.4 SPACING SCALE (8px Base Unit)
+   * Consistent spacing rhythm across all components
+   * ----------------------------------------------------------------------- */
+
+  --space-xs: 0.25rem;  /* 4px */
+  --space-sm: 0.5rem;   /* 8px */
+  --space-md: 1rem;     /* 16px */
+  --space-lg: 1.5rem;   /* 24px */
+  --space-xl: 2rem;     /* 32px */
+  --space-2xl: 3rem;    /* 48px */
+  --space-3xl: 4rem;    /* 64px */
+
+  /* -----------------------------------------------------------------------
+   * 1.5 BORDER RADIUS
+   * Defines curvature scale for consistency
+   * ----------------------------------------------------------------------- */
+
+  --radius-sm: 0.375rem;    /* 6px - subtle rounded corners */
+  --radius-md: 0.5rem;      /* 8px - standard radius */
+  --radius-lg: 1rem;        /* 16px - generous radius */
+  --radius-xl: 1.5rem;      /* 24px - large radius */
+  --radius-full: 9999px;    /* Fully rounded (pills, circles) */
+
+  /* -----------------------------------------------------------------------
+   * 1.6 TRANSITION DURATIONS
+   * Consistent animation timing for interactions
+   * ----------------------------------------------------------------------- */
+
+  --duration-fast: 0.15s;    /* Quick feedback (color changes) */
+  --duration-normal: 0.3s;   /* Standard (hover effects, fades) */
+  --duration-slow: 0.5s;     /* Considered (modal opens, complex animations) */
+  --duration-slower: 0.8s;   /* Leisurely (page transitions, hero sequences) */
+
+  /* Easing Functions */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+  /* -----------------------------------------------------------------------
+   * 1.7 Z-INDEX SCALE
+   * Maintains logical stacking order across the application
+   * ----------------------------------------------------------------------- */
+
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-tooltip: 1070;
+
+  /* -----------------------------------------------------------------------
+   * 1.8 ADDITIONAL DESIGN TOKENS
+   * Border widths, focus ring styles, and other utilities
+   * ----------------------------------------------------------------------- */
+
+  /* Border Widths */
+  --border-thin: 1px;
+  --border-medium: 2px;
+  --border-thick: 3px;
+
+  /* Focus Ring (Accessibility) */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color: var(--color-accent-gold);
+}
+
+
+/* ============================================================================
+ * SECTION 2: SEMANTIC COLOR CLASSES
+ * Utility-style color system for consistent application throughout templates
+ * ============================================================================ */
+
+/* Surface/Background Colors */
+.bg-surface-primary {
+  background-color: var(--color-primary-navy);
+}
+
+.bg-surface-secondary {
+  background-color: var(--color-neutral-slate-700);
+}
+
+.bg-surface-tertiary {
+  background-color: var(--color-neutral-slate-100);
+}
+
+.bg-surface-light {
+  background-color: var(--color-neutral-beige);
+}
+
+.bg-surface-white {
+  background-color: var(--color-neutral-white);
+}
+
+/* Text Colors - Hierarchy */
+.text-primary {
+  color: var(--color-primary-navy);
+}
+
+.text-secondary {
+  color: var(--color-neutral-slate-600);
+}
+
+.text-tertiary {
+  color: var(--color-neutral-slate-500);
+}
+
+.text-inverse {
+  color: var(--color-neutral-white);
+}
+
+/* Brand Color Text Classes */
+.text-brand-navy {
+  color: var(--color-primary-navy);
+}
+
+.text-brand-wood {
+  color: var(--color-accent-gold);
+}
+
+.text-brand-accent {
+  color: var(--color-accent-gold-light);
+}
+
+.text-brand-walnut {
+  color: var(--color-secondary-walnut);
+}
+
+/* Border Colors */
+.border-brand-navy {
+  border-color: var(--color-primary-navy);
+}
+
+.border-brand-wood {
+  border-color: var(--color-accent-gold);
+}
+
+.border-neutral {
+  border-color: var(--color-neutral-slate-200);
+}
+
+.border-neutral-light {
+  border-color: var(--color-neutral-slate-100);
+}
+
+/* Status Colors */
+.text-success {
+  color: var(--color-success);
+}
+
+.text-warning {
+  color: var(--color-warning);
+}
+
+.text-error {
+  color: var(--color-error);
+}
+
+.text-info {
+  color: var(--color-info);
+}
+
+
+/* ============================================================================
+ * SECTION 3: TYPOGRAPHY UTILITY CLASSES
+ * Font size, family, and weight classes for consistent text rendering
+ * ============================================================================ */
+
+/* Heading Classes */
+.text-h1 {
+  font-size: var(--text-h1-size);
+  line-height: var(--text-h1-line-height);
+  font-weight: var(--text-h1-weight);
+  font-family: var(--text-h1-family);
+}
+
+.text-h2 {
+  font-size: var(--text-h2-size);
+  line-height: var(--text-h2-line-height);
+  font-weight: var(--text-h2-weight);
+  font-family: var(--text-h2-family);
+}
+
+.text-h3 {
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-line-height);
+  font-weight: var(--text-h3-weight);
+  font-family: var(--text-h3-family);
+}
+
+.text-h4 {
+  font-size: var(--text-h4-size);
+  line-height: var(--text-h4-line-height);
+  font-weight: var(--text-h4-weight);
+  font-family: var(--text-h4-family);
+}
+
+/* Body Text Classes */
+.text-body {
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line-height);
+  font-weight: var(--text-body-weight);
+  font-family: var(--text-body-family);
+}
+
+.text-small {
+  font-size: var(--text-small-size);
+  line-height: var(--text-small-line-height);
+  font-weight: var(--text-small-weight);
+  font-family: var(--text-small-family);
+}
+
+.text-micro {
+  font-size: var(--text-micro-size);
+  line-height: var(--text-micro-line-height);
+  font-weight: var(--text-micro-weight);
+  font-family: var(--text-micro-family);
+  letter-spacing: var(--text-micro-letter-spacing);
+  text-transform: var(--text-micro-text-transform);
+}
+
+/* Font Family Classes */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Font Weight Classes */
+.font-light {
+  font-weight: var(--font-weight-light);
+}
+
+.font-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.font-extrabold {
+  font-weight: var(--font-weight-extrabold);
+}
+
+/* Letter Spacing / Tracking Classes */
+.tracking-wide {
+  letter-spacing: 0.1em;
+}
+
+.tracking-wider {
+  letter-spacing: 0.15em;
+}
+
+.tracking-widest {
+  letter-spacing: 0.2em;
+}
+
+
+/* ============================================================================
+ * SECTION 4: COMPONENT BASE CLASSES
+ * Reusable base patterns for common components (buttons, cards, inputs)
+ * ============================================================================ */
+
+/**
+ * Button Base Styles
+ * Provides common button functionality: padding, transitions, focus states
+ * Extend with modifier classes for variants (primary, secondary, etc.)
+ */
+.btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md) var(--space-lg);
+  font-family: var(--font-body);
+  font-size: var(--text-body-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-body-line-height);
+  text-decoration: none;
+  border: var(--border-thin) solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-in-out);
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-base:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/**
+ * Card Base Styles
+ * Provides common card functionality: padding, radius, shadow, hover effects
+ * Use with background color and text color classes
+ */
+.card-base {
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-neutral-white);
+  box-shadow: var(--shadow-medium);
+  transition: all var(--duration-normal) var(--ease-in-out);
+  position: relative;
+}
+
+.card-base:hover {
+  box-shadow: var(--shadow-strong);
+  transform: translateY(-2px);
+}
+
+/**
+ * Input Base Styles
+ * Provides common input field functionality: padding, border, focus states
+ * Apply to input, textarea, select elements
+ */
+.input-base {
+  width: 100%;
+  padding: var(--space-md);
+  font-family: var(--font-body);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line-height);
+  border: var(--border-thin) solid var(--color-neutral-slate-300);
+  border-radius: var(--radius-md);
+  background-color: var(--color-neutral-white);
+  color: var(--color-primary-navy);
+  transition: all var(--duration-normal) var(--ease-in-out);
+  box-sizing: border-box;
+}
+
+.input-base:focus {
+  outline: none;
+  border-color: var(--color-accent-gold);
+  box-shadow: 0 0 0 var(--focus-ring-offset) rgba(194, 142, 90, 0.2);
+}
+
+.input-base:disabled {
+  background-color: var(--color-neutral-slate-100);
+  color: var(--color-neutral-slate-500);
+  cursor: not-allowed;
+}
+
+.input-base::placeholder {
+  color: var(--color-neutral-slate-400);
+}
+
+
+/* ============================================================================
+ * SECTION 5: ADVANCED DEPTH & EFFECTS CLASSES
+ * Visual hierarchy, glass morphism, and advanced shadow utilities
+ * ============================================================================ */
+
+/**
+ * Glass Morphism Effect
+ * Creates elevated, frosted glass appearance with backdrop blur
+ */
+.glass-elevated {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: var(--border-thin) solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-medium);
+}
+
+/**
+ * Depth Classes
+ * Combine shadow, transform, and styling for layered visual hierarchy
+ */
+.depth-subtle {
+  box-shadow: var(--shadow-subtle);
+}
+
+.depth-medium {
+  box-shadow: var(--shadow-medium);
+}
+
+.depth-strong {
+  box-shadow: var(--shadow-strong);
+}
+
+/**
+ * Brand Shadow Variants
+ * Specialized shadow effects using brand colors
+ */
+.brand-shadow {
+  box-shadow: var(--shadow-medium);
+}
+
+.wood-shadow {
+  box-shadow: var(--shadow-wood);
+}
+
+.floating-shadow {
+  box-shadow: var(--shadow-floating);
+}
+
+/**
+ * Overlay Effect
+ * Subtle colored overlay for enhanced contrast
+ */
+.overlay-brand {
+  background: linear-gradient(
+    135deg,
+    rgba(11, 17, 32, 0.7),
+    rgba(194, 142, 90, 0.3)
+  );
+}
+
+.overlay-navy {
+  background-color: rgba(11, 17, 32, 0.6);
+}
+
+/**
+ * Elevated State
+ * Combines shadow and slight transform for interactive feedback
+ */
+.elevated {
+  box-shadow: var(--shadow-medium);
+  transition: all var(--duration-normal) var(--ease-in-out);
+}
+
+.elevated:hover {
+  box-shadow: var(--shadow-strong);
+  transform: translateY(-4px);
+}
+
+
+/* ============================================================================
+ * SECTION 6: ACCESSIBILITY & FOCUS STATES
+ * Keyboard navigation, focus visibility, and screen reader utilities
+ * ============================================================================ */
+
+/**
+ * Focus Ring
+ * Gold outline for keyboard navigation - high contrast and branded
+ */
+.focus-ring {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/**
+ * Focus Visible Override
+ * Ensures visible focus on interactive elements for keyboard users
+ * Apply to buttons, links, and form elements
+ */
+*:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Enhance button focus states */
+.btn-base:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Enhance input focus states */
+.input-base:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/**
+ * Skip to Content Link
+ * Screen reader only - visible on focus for accessibility
+ * Place at the top of page markup to allow keyboard users to skip navigation
+ */
+.skip-to-content {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  z-index: var(--z-modal);
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-accent-gold);
+  color: var(--color-primary-navy);
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-md);
+}
+
+.skip-to-content:focus {
+  top: var(--space-md);
+  left: var(--space-md);
+  outline: var(--focus-ring-width) solid var(--color-primary-navy);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/**
+ * Reduced Motion Support
+ * Respects user's prefers-reduced-motion system setting
+ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/**
+ * High Contrast Mode Support
+ * Ensures readability for users with visual impairments
+ */
+@media (prefers-contrast: more) {
+  .text-secondary {
+    color: var(--color-neutral-slate-700);
+  }
+
+  .text-tertiary {
+    color: var(--color-neutral-slate-600);
+  }
+}
+
+/* ============================================================================
+ * END OF DESIGN TOKENS
+ * ============================================================================
+ * 
+ * USAGE GUIDELINES:
+ * 
+ * 1. COLOR USAGE:
+ *    - Use semantic color classes (.text-primary, .bg-surface-light)
+ *    - Reference CSS variables for custom styling
+ *    - Maintain 60-30-10 rule in layouts
+ * 
+ * 2. TYPOGRAPHY:
+ *    - Always use predefined text classes (.text-h1, .text-body, etc.)
+ *    - Never set raw font sizes - use variables
+ *    - Ensure proper line-height for readability
+ * 
+ * 3. SPACING:
+ *    - Use spacing scale variables (--space-md, --space-lg, etc.)
+ *    - Maintain consistent rhythm with 8px base unit
+ * 
+ * 4. SHADOWS:
+ *    - Use shadow variables for consistent depth
+ *    - Apply subtle shadows for hover states
+ *    - Reserve strong/floating shadows for modal and sticky elements
+ * 
+ * 5. COMPONENTS:
+ *    - Extend base classes (.btn-base, .card-base, .input-base)
+ *    - Add modifier classes for variants
+ *    - Maintain consistent padding and radius
+ * 
+ * 6. ACCESSIBILITY:
+ *    - Always provide focus states on interactive elements
+ *    - Test with keyboard navigation
+ *    - Use .skip-to-content for progressive enhancement
+ *    - Respect prefers-reduced-motion and prefers-contrast settings
+ * 
+ * ============================================================================
+ */

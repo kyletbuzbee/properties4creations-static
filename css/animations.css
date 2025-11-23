@@ -1,0 +1,383 @@
+/* P4C Animations CSS - Advanced Animation Effects */
+/* Load this with low priority and defer for optimal performance */
+
+/* ===========================
+   BASIC ANIMATIONS
+   =========================== */
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animate-fade-in-up {
+    animation: fadeInUp var(--duration-normal) ease-out forwards;
+}
+
+/* Fade In Left Animation */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.animate-fade-in-left {
+    animation: fadeInLeft var(--duration-normal) ease-out forwards;
+}
+
+/* Fade In Right Animation */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.animate-fade-in-right {
+    animation: fadeInRight var(--duration-normal) ease-out forwards;
+}
+
+/* Scale In Animation */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.animate-scale-in {
+    animation: scaleIn var(--duration-normal) ease-out forwards;
+}
+
+/* Slide In Up Animation */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animate-slide-in-up {
+    animation: slideInUp var(--duration-slow) ease-out forwards;
+}
+
+/* Float Animation (subtle continuous) */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse Soft Animation */
+@keyframes pulseSoft {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+.animate-pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+}
+
+/* Shimmer/Glow Animation */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+.animate-shimmer {
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* ===========================
+   MODERN DYNAMIC ANIMATIONS
+   =========================== */
+
+/* Floating Elements Animation */
+@keyframes float-gentle {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-3px) rotate(0.5deg);
+    }
+    66% {
+        transform: translateY(2px) rotate(-0.5deg);
+    }
+}
+.float-gentle {
+    animation: float-gentle 4s ease-in-out infinite;
+}
+
+@keyframes float-delayed {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+.float-delayed {
+    animation: float-delayed 6s ease-in-out infinite;
+    animation-delay: -2s;
+}
+
+@keyframes float-slow {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        transform: translateY(-2px) scale(1.02);
+    }
+}
+.float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+}
+
+/* Particle Effect */
+@keyframes particle-float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Gradient Text Effects */
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+.gradient-text {
+    background: linear-gradient(45deg, #dc2626, #059669, #1e293b);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease infinite;
+}
+
+/* Interactive Hover Effects */
+.interactive-hover {
+    position: relative;
+    overflow: hidden;
+}
+
+.interactive-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s;
+}
+
+.interactive-hover:hover::before {
+    left: 100%;
+}
+
+/* Scroll-triggered animations */
+@keyframes slide-in-left {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.slide-in-left {
+    animation: slide-in-left 0.6s ease-out forwards;
+}
+
+@keyframes slide-in-right {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.slide-in-right {
+    animation: slide-in-right 0.6s ease-out forwards;
+}
+
+@keyframes slide-in-up-stagger {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Staggered animations */
+.stagger-1 {
+    animation: slide-in-up-stagger 0.8s ease-out forwards;
+    animation-delay: 0.1s;
+}
+.stagger-2 {
+    animation: slide-in-up-stagger 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+}
+.stagger-3 {
+    animation: slide-in-up-stagger 0.8s ease-out forwards;
+    animation-delay: 0.3s;
+}
+.stagger-4 {
+    animation: slide-in-up-stagger 0.8s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+/* Magnetic hover effect */
+.magnetic-hover {
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+}
+
+.magnetic-hover:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Pulse glow effect */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(220, 38, 38, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(220, 38, 38, 0.4), 0 0 80px rgba(220, 38, 38, 0.1);
+    }
+}
+.pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Typing effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #059669; }
+}
+
+.typing-effect {
+    overflow: hidden;
+    border-right: 2px solid;
+    white-space: nowrap;
+    animation: typing 2s steps(40) forwards, blink-caret 0.75s step-end infinite;
+}
+
+/* ===========================
+   PERFORMANCE OPTIMIZATIONS
+   =========================== */
+
+:root.reduce-motion * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+}
+
+/* Stagger animations for lists */
+.stagger-item:nth-child(1) { animation-delay: 0s; }
+.stagger-item:nth-child(2) { animation-delay: var(--duration-fast); }
+.stagger-item:nth-child(3) { animation-delay: calc(var(--duration-fast) * 2); }
+.stagger-item:nth-child(4) { animation-delay: calc(var(--duration-fast) * 3); }
+.stagger-item:nth-child(5) { animation-delay: calc(var(--duration-fast) * 4); }
+
+/* ===========================
+   LAZY LOADING ANIMATIONS
+   =========================== */
+
+.lazy-fade-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.lazy-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+}
+
+.loaded {
+    opacity: 1 !important;
+}
+
+/* Intersection Observer triggered animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===========================
+   DEBUG UTILITIES
+   =========================== */
+
+.debug-element {
+    outline: 2px solid red;
+    outline-offset: 2px;
+}
+
+.debug-text {
+    color: red;
+    font-weight: bold;
+}
